@@ -1,0 +1,20 @@
+-- game version 0.1
+
+game starts with the human only, not the machine
+gun mechanism, 1 bullet out of 6 chambers. gun need reloading.
+
+gun rules:
+1) spin at turn
+2) spin only at the start
+
+One remaining thing for spin at will
+
+chamber = 6
+while:
+    gun = chamber
+    else:
+        gun -= 1 # for removing blanks
+    
+    else:
+        # spining chamber
+        gun = chamber
