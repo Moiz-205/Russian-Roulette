@@ -1,58 +1,51 @@
 import random
-import time
 from termcolor import colored
 
 # user = input('Play Russian Roulette (y/n): ')
 # turn = input("Pick Gun (y/n): ") if else
 
-for i in range(1,7):
-    trigger = input("Pull Trigger (y/n): ")
+live = random.randint(1,6)
+chamber = 6
+gun = chamber
 
-    if trigger == 'y':
-        gun = random.randint(1,2)
-        if gun == 1:
-            print('Pulling Trigger', end='', flush=True)
-            for i in range(3):
-                time.sleep(0.5)
-                print('.', end='', flush=True)
-            time.sleep(0.3)
-            print(colored('\nYou Survived...!', 'blue'))
+# Turn based mechanic to take turn first or pass it
+choice = input("Pick gun (y/n): ")
+if choice == 'y':
+    turn = 'Player'
+else:
+    turn = 'Machine'
 
-            print('\nMachine turn')
-            gun_machine = random.randint(1,2)
-            if gun_machine == 1:
-                print('Machine Pulling Trigger', end='', flush=True)
-                for i in range(3):
-                    time.sleep(0.3)
-                    print('.', end='', flush=True)
-                time.sleep(0.1)
-                print(colored('\nMachine survived...!', 'red'))
-                print('\nYours Turn')
-                continue
 
-            else:
-                print('Machine Pulling Trigger', end='', flush=True)
-                for i in range(3):
-                    time.sleep(0.3)
-                    print('.', end='', flush=True)
-                time.sleep(0.1)
-                print('\nBammm! Machine\'s Dead...')
-                print(colored('\nYou Survived...', 'blue'))
+while True:
+    if gun > 0:
+        trigger = input("Pull Trigger (y/n): ")
+
+        if trigger == 'y':
+            if gun == live:
+                print(colored('\nBammm! You are dead...', 'red'))
                 break
 
-        elif gun == 2:
-            print('Pulling Trigger', end='', flush=True)
-            for i in range(3):
-                time.sleep(0.5)
-                print('.', end='', flush=True)
-            time.sleep(0.3)
-            print(colored('\nBammm! You are dead...', 'red'))
-            break
+            else:
+                print(colored('\nYou Survived...!', 'blue'))
+                gun -= 1
 
-    elif trigger == 'n':
-        print('You are killed for leaving the game...!')
-        break
+                if gun == live:
+                    print(colored('\nBammm! Machine\'s Dead...', 'green'))
+                    print(colored('You Survived...', 'blue'))
+                    break
+
+                else:
+                    print(colored('\nMachine survived...!', 'red'))
+                    print('\nYours Turn')
+                    gun -= 1
+                    continue
+        
+        elif trigger == 'n':
+            print(colored('You are killed for being a CHICKEN...!', 'red'))
+            break
+        else:
+            print(colored('You are killed for being a FOOLISH CHICKEN...!', 'red'))
+            break
+    
     else:
-        print('You are killed for being a coward...!')
         break
-                 

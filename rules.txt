@@ -1,20 +1,14 @@
--- game version 0.1
+-- game version 0.2
 
-game starts with the human only, not the machine
-gun mechanism, 1 bullet out of 6 chambers. gun need reloading.
+1. Game gives option to choose to start first or not.
+2. Gun chamber can be spun, resetting it to random instance.
+3. Player can also spin the chamber as well as machine too.
+4. 
 
-gun rules:
-1) spin at turn
-2) spin only at the start
 
-One remaining thing for spin at will
+1--> pass 1 or 0:
 
-chamber = 6
-while:
-    gun = chamber
-    else:
-        gun -= 1 # for removing blanks
-    
-    else:
-        # spining chamber
-        gun = chamber
+2--> spin == 1:
+        chamber = random.randint(1,6)
+
+3--> 

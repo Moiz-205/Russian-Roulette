@@ -6,12 +6,10 @@ from termcolor import colored
 # turn = input("Pick Gun (y/n): ") if else
 
 live = random.randint(1,6)
-# print(live)
 chamber = 6
 gun = chamber
 
 while True:
-    # gun = chamber
     if gun > 0:
         trigger = input("Pull Trigger (y/n): ")
 
