@@ -6,13 +6,13 @@ def load_gun(chambers=6):
 
 def pull_trigger(remaining, bullet_position):
     if remaining <= 0:
-        outcome = 'Empty'
+        outcome = 'empty'
         return outcome, remaining
     elif remaining == bullet_position:
-        outcome = 'Bang'
+        outcome = 'bang'
         remaining -= 1
     else:
-        outcome = 'Click'
+        outcome = 'click'
         remaining -= 1
 
     return outcome, remaining
