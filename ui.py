@@ -4,7 +4,7 @@ def get_player_input():
     trigger = input('Pull Trigger (y/n): ')
     return trigger
 
-def show_output(actor, outcome):
+def show_outcome(actor, outcome):
     if actor == 'player':
         animate('Pulling Trigger')
 
