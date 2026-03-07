@@ -1,3 +1,6 @@
+# Ignores
+.roulette/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -133,9 +136,6 @@ celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
-
-# My Custom Virtual Environment
-.roulette/
 
 # Environments
 .env
