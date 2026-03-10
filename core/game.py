@@ -1,7 +1,7 @@
 import random
 from core.gun import load_gun, pull_trigger, spin_chamber
-from core.ui import (get_player_input, show_outcome, show_chicken, show_invalid,
-                show_timeout, show_who_goes_first, show_spin)
+from interface.ui import (get_player_input, show_outcome, show_chicken, show_invalid,
+show_timeout, show_who_goes_first, show_spin)
 
 def get_timer(player_turn_count):
     if player_turn_count <= 3:

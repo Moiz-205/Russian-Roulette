@@ -1,4 +1,4 @@
-from core.utils import animate, cprint, countdown_timer
+from interface.utils import animate, cprint, countdown_timer
 
 def get_player_input(timer):
     return countdown_timer(timer)
