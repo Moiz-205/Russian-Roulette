@@ -1,8 +1,7 @@
-from utils import animate, cprint
+from core.utils import animate, cprint, countdown_timer
 
-def get_player_input():
-    trigger = input('Pull Trigger (y/n): ')
-    return trigger
+def get_player_input(timer):
+    return countdown_timer(timer)
 
 def show_outcome(actor, outcome):
     if actor == 'player':
@@ -27,3 +26,12 @@ def show_chicken():
 
 def show_invalid():
     cprint("You are killed for being a FOOLISH CHICKEN...!", "red")
+
+def show_timeout():
+    cprint('You took too long... BANG! You are dead!', 'red')
+
+def show_who_goes_first(turn):
+    cprint(f'{turn.upper()} goes first!', 'yellow')
+
+def show_spin(actor):
+    cprint(f'{actor.capitalize()} spun the revolver...', 'yellow')
