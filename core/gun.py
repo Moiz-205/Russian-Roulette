@@ -16,3 +16,8 @@ def pull_trigger(remaining, bullet_position):
         remaining -= 1
 
     return outcome, remaining
+
+# Mid-game revolver spin for the strategy
+def spin_chamber(chambers=6):
+    bullet_position = random.randint(1, chambers)
+    return chambers, bullet_position
