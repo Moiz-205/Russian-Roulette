@@ -1,4 +1,3 @@
-from platform import machine
 import pygame
 
 WIDTH, HEIGHT = 800, 600
@@ -46,5 +45,5 @@ def draw_spin(screen, actor, frame):
     font = pygame.font.SysFont('Arial', 36, bold=True)
     dots = '.' * (frame % 4)
     text = f"{actor.captalize()} spins the chamber {dots}"
-    label = font.render(text, true, YELLOW)
+    label = font.render(text, True, YELLOW)
     screen.blit(label, label.get_rect(center=(WIDTH // 2, HEIGHT // 2)))
