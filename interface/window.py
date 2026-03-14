@@ -1,13 +1,8 @@
 import pygame
 import sys
+from config import WIDTH, HEIGHT, FPS
+from config import BLACK, WHITE, RED, HOVER_RED
 
-WIDTH, HEIGHT = 800, 600
-FPS = 60
-
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-RED = (100, 0, 0)
-HOVER_RED = (220, 30, 30)
 
 def init_window():
     pygame.init()
@@ -51,10 +46,18 @@ def main_menu(screen):
         screen.blit(title, title.get_rect(center=(WIDTH // 2, 160)))
 
         # button with mouse hover
-        draw_button(screen, 'Start', start_rect,
-         HOVER_RED if start_rect.collidepoint(mouse_pos) else RED, button_font)
-        draw_button(screen, 'Quit', quit_rect,
-            HOVER_RED if quit_rect.collidepoint(mouse_pos) else RED, button_font)
+        if start_rect.collidepoint(mouse_pos):
+            start_color = HOVER_RED
+        else:
+            start_color = RED
+
+        if quit_rect.collidepoint(mouse_pos):
+            quit_color = HOVER_RED
+        else:
+            quit_color = RED
+
+        draw_button(screen, 'Start', start_rect, start_color, button_font)
+        draw_button(screen, 'Quit', quit_rect, quit_color, button_font)
 
         pygame.display.flip()
         clock.tick(FPS)
