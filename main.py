@@ -4,4 +4,4 @@ from core.game import game_loop
 if __name__ == "__main__":
     screen = init_window()
     if main_menu(screen) == 'start':
-        game_loop()
+        game_loop(screen)
