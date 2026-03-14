@@ -59,7 +59,7 @@ def draw_outcome(screen, actor, outcome, alpha):
 def draw_spin(screen, actor, frame):
     font = pygame.font.SysFont('Arial', 36, bold=True)
 
-    actor = actor.capatalize()
+    actor = actor.capitalize()
     dots = '.' * (frame % 4)
     text = f"{actor} spins the chamber {dots}"
 
@@ -81,3 +81,9 @@ def draw_timer_bar(screen, elapsed, total):
 
     pygame.draw.rect(screen, GRAY, (x, y, bar_width, bar_height), border_radius=6)
     pygame.draw.rect(screen, color, (x, y, int(bar_width * ratio), bar_height), border_radius=6)
+
+def draw_button(screen, text, rect, color, font):
+    pygame.draw.rect(screen, color, rect, border_radius=8)
+    label = font.render(text, True, WHITE)
+    label_rect = label.get_rect(center=rect.center)
+    screen.blit(label, label_rect)
